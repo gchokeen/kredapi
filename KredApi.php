@@ -29,11 +29,11 @@ class KredApi{
 	
 	
 	function KredScore($term,$source){
-		$url = $BaseUrl;
+		$url = $this->BaseUrl;
 		$params['term'] = $term; //screen name
-		$parm['source'] = $source; // eg:- Twitter, Facebook etc		
-		$parm['app_id'] = $this->KredAppId;
-		$parm['app_key'] = $this->KredAppkey;
+		$params['source'] = $source; // eg:- Twitter, Facebook etc		
+		$params['app_id'] = $this->KredAppId;
+		$params['app_key'] = $this->KredAppkey;
 		// Return the result;
 		$CurlResult = $this->GET($url,$params);
 		$result =  json_decode($CurlResult);
@@ -109,7 +109,7 @@ class KredApi{
 		if(!empty($params) && $params){
 			foreach($params as $k=>$v) $kv[] = "$k=$v";
 			$url_params = str_replace(" ","+",implode('&',$kv));
-			$url = trim($url) . '?' . $url_params;
+		echo	$url = trim($url) . '?' . $url_params;
 		}
 		return $url;
 	}	
