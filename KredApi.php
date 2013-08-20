@@ -23,8 +23,8 @@ class KredApi{
 	private $KredAppkey;
 	
 	public function  __construct($KredAppId,$KredAppkey){
-		$this->KredAppId ='Your Kred Application Id';
-		$this->KredAppkey ='Your Kred Application Key';
+		$this->KredAppId =$KredAppId; //Your Kred Application Id
+		$this->KredAppkey =$KredAppkey; //Your Kred Application Key
 	}
 	
 	

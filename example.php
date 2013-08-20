@@ -5,4 +5,8 @@ $appKey = '';
 
 $kred = KredApi($appId,$appKey);
 
-$kred->KredScore('term','source');
+/*
+ * source - Twiter, facebook etc
+ * term - your twitter handle or other
+ */
+$response = $kred->KredScore('term','source');
