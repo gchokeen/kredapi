@@ -14,7 +14,7 @@
 DEFINE("HTTP_GET","GET");
 DEFINE("HTTP_POST","POST");
 
-class KredAPI{
+class KredApi{
 	
 	private $BaseUrl = "http://api.kred.com/kredscore";
 
@@ -28,6 +28,18 @@ class KredAPI{
 	}
 	
 	
+	function KredScore($term,$source){
+		$url = $BaseUrl;
+		$params['term'] = $term; //screen name
+		$parm['source'] = $source; // eg:- Twitter, Facebook etc		
+		$parm['app_id'] = $this->KredAppId;
+		$parm['app_key'] = $this->KredAppkey;
+		// Return the result;
+		$CurlResult = $this->GET($url,$params);
+		$result =  json_decode($CurlResult);
+		
+		return $result;
+	}
 
 	/******************************************************/
 	//       Utility
