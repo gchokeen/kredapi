@@ -109,7 +109,7 @@ class KredApi{
 		if(!empty($params) && $params){
 			foreach($params as $k=>$v) $kv[] = "$k=$v";
 			$url_params = str_replace(" ","+",implode('&',$kv));
-		echo	$url = trim($url) . '?' . $url_params;
+			$url = trim($url) . '?' . $url_params;
 		}
 		return $url;
 	}	
